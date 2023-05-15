@@ -20,6 +20,7 @@ return require('packer').startup(function(use)
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
 
+  -- LSP (Language Server Protocol)
   use {
       'VonHeikemen/lsp-zero.nvim',
       requires = {
@@ -53,6 +54,9 @@ return require('packer').startup(function(use)
           }
       end
   }
+
+  use { "puremourning/vimspector" }
+
   use { "godlygeek/tabular" }
   -- install without yarn or npm
   use({
@@ -63,4 +67,13 @@ return require('packer').startup(function(use)
   --use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
   use { "preservim/vim-markdown" }
   use { "mzlogin/vim-markdown-toc" }
+
+  use { "cdelledonne/vim-cmake" }
+
+  --co-pilot test
+  -- use { "github/copilot.vim" }
+
+  -- rust support
+  use { "neovim/nvim-lspconfig" }
+  use { "simrat39/rust-tools.nvim" }
 end)

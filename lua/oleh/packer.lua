@@ -15,8 +15,13 @@ return require('packer').startup(function(use)
   use('nvim-telescope/telescope-fzf-native.nvim', {run = 'make'})
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('nvim-treesitter/playground')
+
+-- color schemes  
   use('vim-airline/vim-airline')
   use('vim-airline/vim-airline-themes')
+  use('zacanger/angr.vi m')
+
+
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
 

@@ -19,7 +19,7 @@ return require('packer').startup(function(use)
 -- color schemes  
   use('vim-airline/vim-airline')
   use('vim-airline/vim-airline-themes')
-  use('zacanger/angr.vi m')
+  use('zacanger/angr.vim')
 
 
   use('mbbill/undotree')

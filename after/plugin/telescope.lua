@@ -19,7 +19,7 @@ function telescope_custom_actions._multiopen(prompt_bufnr, open_cmd)
     if num_selections > 1 then
         local picker = action_state.get_current_picker(prompt_bufnr)
         for _, entry in ipairs(picker:get_multi_selection()) do
-            vim.cmd(string.format("%s %s", ":e!", entry.value))
+            vim.cmd(string.format("%s %s", ":" .. open_cmd .. "!", entry.value))
         end
         vim.cmd('stopinsert')
     else
@@ -52,13 +52,13 @@ require('telescope').setup({
                 ['<C-k>'] = actions.move_selection_previous,
                 ['<tab>'] = actions.toggle_selection + actions.move_selection_next,
                 ['<s-tab>'] = actions.toggle_selection + actions.move_selection_previous,
-                ['<cr>'] = telescope_custom_actions._multiopen,
+                ['<cr>'] = telescope_custom_actions.multi_selection_open_tab,
             },
             n = {
                 ['<esc>'] = actions.close,
                 ['<tab>'] = actions.toggle_selection + actions.move_selection_next,
                 ['<s-tab>'] = actions.toggle_selection + actions.move_selection_previous,
-                ['<cr>'] = telescope_custom_actions._multiopen
+                ['<cr>'] = telescope_custom_actions.multi_selection_open_tab
             }
         }
     }

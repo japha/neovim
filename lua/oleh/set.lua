@@ -28,6 +28,12 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 --vim.opt.colorcolumn = "80"
---
+
 vim.wo.foldmethod = "expr"
 vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
+
+if vim.g.neovide then
+   vim.o.guifont = "CaskaydiaCove Nerd Font Mono ExtraLight:h13"  
+   vim.g.neovide_fullscreen = true
+   vim.g.neovide_remember_window_size = true
+end

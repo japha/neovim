@@ -16,11 +16,16 @@ return require('packer').startup(function(use)
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('nvim-treesitter/playground')
 
+  --Source tree
+  use('nvim-tree/nvim-tree.lua')
+
 -- color schemes  
   use('vim-airline/vim-airline')
   use('vim-airline/vim-airline-themes')
   use('zacanger/angr.vim')
 
+-- code formatter
+  use {'mhartington/formatter.nvim'}
 
   use('mbbill/undotree')
   use('tpope/vim-fugitive')

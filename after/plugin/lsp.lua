@@ -1,4 +1,5 @@
 local lsp = require("lsp-zero")
+local lsp_config = require("lspconfig")
 
 lsp.preset("recommended")
 
@@ -56,6 +57,17 @@ lsp.set_preferences({
     }
 })
 
+lsp_config.clangd.setup({
+  on_new_config = function(config, root_dir)
+    config.cmd = {
+      "clangd",
+      "--background-index",
+      "--query_driver",
+      "/usr/bin/clang++"
+    }
+  end
+})
+
 lsp.on_attach(function(client, bufnr)
   local opts = {buffer = bufnr, remap = false}
 
@@ -87,4 +99,6 @@ vim.diagnostic.config({
   severity_sort = false,
   float = true,
 })
+
+vim.lsp.set_log_level("debug")
 

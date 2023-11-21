@@ -86,4 +86,5 @@ return require('packer').startup(function(use)
   -- rust support
   use { "neovim/nvim-lspconfig" }
   use { "simrat39/rust-tools.nvim" }
+  use { "voldikss/vim-floaterm" }
 end)

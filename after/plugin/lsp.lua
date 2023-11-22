@@ -1,24 +1,8 @@
 local lsp = require("lsp-zero")
 local lsp_config = require("lspconfig")
 
-lsp.preset("recommended")
-
-lsp.ensure_installed({
-    'tsserver',
-    'eslint',
-    --'sumneko_lua',
-    'yamlls',
-    'vimls',
-    --'clang-format',
-    --'jq',
-    --'cmakelang',
-    'bashls',
-    'clangd',
-    --'luals',
-})
-
 -- Fix Undefined global 'vim'
-lsp.configure('sumneko_lua', {
+lsp.configure('lua_ls', {
     settings = {
         Lua = {
             diagnostics = {
@@ -71,6 +55,7 @@ lsp_config.clangd.setup({
 lsp.on_attach(function(client, bufnr)
   local opts = {buffer = bufnr, remap = false}
 
+
   if client.name == "eslint" then
       vim.cmd.LspStop('eslint')
       return
@@ -100,5 +85,5 @@ vim.diagnostic.config({
   float = true,
 })
 
-vim.lsp.set_log_level("debug")
+--vim.lsp.set_log_level("debug")
 

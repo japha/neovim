@@ -4,8 +4,7 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.0',
-    -- or                            , branch = '0.1.x',
+    'nvim-telescope/telescope.nvim', branch = '0.1.x', -- or  , tag = '0.1.5',
     requires = { 
         {'nvim-lua/plenary.nvim'}, 
         {'nvim-tree/nvim-web-devicons'}
@@ -79,7 +78,6 @@ return require('packer').startup(function(use)
   -- use { "github/copilot.vim" }
 
   -- rust support
-  use { "neovim/nvim-lspconfig" }
   use { "simrat39/rust-tools.nvim" }
   use { "voldikss/vim-floaterm" }
 end)

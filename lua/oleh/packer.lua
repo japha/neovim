@@ -5,8 +5,8 @@ return require('packer').startup(function(use)
 
   use {
     'nvim-telescope/telescope.nvim', branch = '0.1.x', -- or  , tag = '0.1.5',
-    requires = { 
-        {'nvim-lua/plenary.nvim'}, 
+    requires = {
+        {'nvim-lua/plenary.nvim'},
         {'nvim-tree/nvim-web-devicons'}
     }
   }
@@ -18,7 +18,7 @@ return require('packer').startup(function(use)
   --Source tree
   use('nvim-tree/nvim-tree.lua')
 
--- color schemes  
+-- color schemes
   use('vim-airline/vim-airline')
   use('vim-airline/vim-airline-themes')
   use('zacanger/angr.vim')
@@ -57,6 +57,19 @@ return require('packer').startup(function(use)
               -- refer to the configuration section below
           }
       end
+  }
+
+  -- cppman
+  use {
+    'madskjeldgaard/cppman.nvim',
+    requires = {
+      { 'MunifTanjim/nui.nvim' }
+    },
+    config = function()
+      local cppman = require"cppman"
+      cppman.setup()
+
+    end
   }
 
   use { "puremourning/vimspector" }

@@ -1,1 +1,1 @@
-require("oleh")
+require("config.lazy")

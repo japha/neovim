@@ -1,4 +1,5 @@
-local rt = require("rust-tools")
+--[[
+--local rt = require("rust-tools")
 
 rt.setup({
   server = {
@@ -10,3 +11,4 @@ rt.setup({
     end,
   },
 })
+]]--

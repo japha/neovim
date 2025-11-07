@@ -1,5 +1,3 @@
-local lsp_config = require("lspconfig")
-
 local cmp = require('cmp')
 
 cmp.setup({
@@ -91,9 +89,10 @@ require('mason-lspconfig').setup({
 local servers = require('mason-lspconfig').get_installed_servers
 for _, server in ipairs(servers()) do
   local config = { capabilities = lsp_capabilities }
+  --[[ Uncomment for MacOS environment
   if server == 'clangd' then
     config.on_new_config = function(config, root_dir)
-      config.cmd = {
+      config.cmd = { 
         "/Library/Developer/CommandLineTools/usr/bin/clangd",
         "--background-index",
         "--query-driver",
@@ -101,7 +100,8 @@ for _, server in ipairs(servers()) do
       }
     end
   end
-  lsp_config[server].setup(config)
+  ]]--
+  vim.lsp.config(server, config)
 end
 
 

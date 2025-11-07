@@ -84,6 +84,6 @@ return {
 	-- { "github/copilot.vim" }
 
 	-- rust support
-	{ "simrat39/rust-tools.nvim" },
+	--{ "simrat39/rust-tools.nvim" },
 	{ "voldikss/vim-floaterm" }
 }

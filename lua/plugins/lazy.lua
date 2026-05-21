@@ -5,8 +5,7 @@ return {
 	{ 'nvim-telescope/telescope.nvim', branch = '0.1.x', },
 
 	{'nvim-telescope/telescope-fzf-native.nvim'},
-	{'nvim-treesitter/nvim-treesitter'},
-	{'nvim-treesitter/playground'},
+	{'nvim-treesitter/nvim-treesitter', branch = 'main', lazy = false, build = ':TSUpdate'},
 
 	--Source tree
 	{'nvim-tree/nvim-tree.lua'},

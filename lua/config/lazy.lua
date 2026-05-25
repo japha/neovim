@@ -21,6 +21,10 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+--Change python to local virtual environment
+vim.g.python3_host_prog = vim.fn.expand('~/env/python/bin/python3')
+
+
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {

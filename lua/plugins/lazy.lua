@@ -10,6 +10,10 @@ return {
 	--Source tree
 	{'nvim-tree/nvim-tree.lua'},
 
+    --Cisco
+    { "momota/cisco.vim" },
+
+
 	-- color schemes
 	{'vim-airline/vim-airline'},
 	{'vim-airline/vim-airline-themes'},

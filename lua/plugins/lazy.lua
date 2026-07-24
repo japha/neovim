@@ -1,10 +1,13 @@
 return { 
-	{'nvim-lua/plenary.nvim'},
 	{'nvim-tree/nvim-web-devicons'},
 
-	{ 'nvim-telescope/telescope.nvim', branch = '0.1.x', },
+	{ 'nvim-telescope/telescope.nvim', version = '*', 
+        dependencies = {
+	        'nvim-lua/plenary.nvim',
+	        {'nvim-telescope/telescope-fzf-native.nvim', build='make'},
+        }
+    },
 
-	{'nvim-telescope/telescope-fzf-native.nvim'},
 	{'nvim-treesitter/nvim-treesitter', branch = 'main', lazy = false, build = ':TSUpdate'},
 
 	--Source tree

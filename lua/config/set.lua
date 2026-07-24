@@ -3,6 +3,9 @@ vim.opt.guicursor = ""
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
+--Set clipboard provider
+vim.opt.clipboard = "unnamedplus"
+
 vim.opt.tabstop = 4 
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4 
